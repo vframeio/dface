@@ -1,0 +1,41 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@next/next/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "react", "react-hooks", "@emotion"],
+  "rules": {
+    "id-length": [
+      "error",
+      {
+        "min": 3,
+        "exceptions": ["id", "x", "y", "x0", "x1", "x2", "y0", "y1", "y2", "w", "a", "b"]
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "linebreak-style": ["error", "unix"],
+    "semi": ["warn", "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

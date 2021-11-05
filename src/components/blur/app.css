@@ -1,0 +1,249 @@
+/**
+ * Blur application CSS
+ * @module components/blur/blur.css
+ */
+
+/* App */
+
+.app {
+  position: relative;
+}
+
+.introText {
+  text-align: center;
+}
+.introTextA {
+  font-size: 24px;
+  color: transparent;
+  text-shadow: 0 0 3px #01e;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.introTextB {
+  color:  #999;
+}
+
+.emoji {
+  display: none;
+}
+
+/* Drag message */
+.drag-message {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 1000000000;
+  pointer-events: none;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.drag-message div {
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  font-size: 1rem;
+}
+
+/* Results */
+
+.results {
+  margin-top: 1rem;
+}
+.results .result {
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+}
+.results img {
+  max-width: 100%;
+  max-height: 80vh;
+  display: block;
+  pointer-events: none;
+}
+.results.placeholder img {
+  opacity: 0.5;
+}
+.results .meta {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Roboto Mono", monospace;
+  text-transform: uppercase;
+  background: #f8f8f8;
+  color: #999;
+}
+.results .meta a {
+  font-size: 12px;
+  /*color: transparent;*/
+  /*text-shadow: 0 0 2px;*/
+  color: #0011ee;
+  display: block;
+  flex: 1;
+  padding: 0.75rem;
+  text-align: center;
+}
+.results .meta a:hover {
+  /*color: transparent;*/
+  /*text-shadow: 0 0 1px #0011ee;*/
+  color: #0011ee;
+  background: #eee;
+}
+.results .meta div {
+  font-size: 12px;
+  padding: 0.75rem 1rem;
+  border-left: 1px solid #e8e8e8;
+  cursor: default;
+}
+
+.results.placeholder .meta {
+  background: url(/assets/img/progress-light.png);
+  animation: progress 0.4s infinite linear !important;
+  color: #666;
+}
+
+.results button {
+  background: #f8f8f8;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  padding: 0.75rem 1rem;
+  border: 0;
+  border-left: 1px solid #e8e8e8;
+  margin: 0;
+  text-transform: uppercase;
+}
+.results button:hover {
+  background: #eee;
+}
+.results .downloadAll {
+  color: #0011ee;
+}
+.results .reset {
+  color: #ff3333;
+}
+
+/* Dropzone */
+
+.dropzone {
+  width: 100%;
+  min-height: 40rem;
+  max-height: calc(50vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f8f8;
+  margin-bottom: 1.25rem;
+  border: 1px dashed #01e;
+  color: #0011ee;
+}
+.dropzone:hover {
+  background: #fefefe;
+  cursor: pointer;
+}
+.dropzone.condensed {
+  min-height: auto;
+  padding: 1.25rem 0;
+  color:  transparent;
+  text-shadow: 0 0 3px #01e;
+  font-size: 18px;
+  border: 1px dashed #01e;
+  text-transform: uppercase;
+}
+.dropzone.processing {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Settings */
+
+.settings {
+  display: flex;
+  flex-direction: column;
+}
+.settings.processing {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.mobile .settings {
+  margin: 1rem 0;
+}
+
+/* Sample images */
+
+.sampleImages {
+  margin-bottom: 0.5rem;
+}
+.sampleImages > div {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+.sampleImages > div > div {
+  margin-right: 0.5rem;
+}
+.sampleImages img {
+  height: 6rem;
+  cursor: grab;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Loader */
+
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.75);
+}
+.loader .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  background: white;
+  padding: 2rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Progress bar */
+
+.progress {
+  background: #f8f8f8;
+  margin: 0.25rem 0;
+  height: 0.25rem;
+  width: 25rem;
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.2rem;
+}
+.progress .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: url(/assets/img/progress.png);
+  animation: progress 0.4s infinite linear !important;
+  transition: width 0.4s ease-out;
+}
+.progress.indeterminate {
+  background: url(/assets/img/progress.png);
+  animation: progress 0.4s infinite linear !important;
+  height: 1rem;
+}
+@keyframes progress {
+  from {
+    background-position: 0px 0px;
+  }
+  to {
+    background-position: -27px 0px;
+  }
+}

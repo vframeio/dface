@@ -1,0 +1,14 @@
+/**
+ * Application-wide manual CSS overrides
+ * @module styles/app.scss
+ */
+
+$sidebarWidth: 200px;
+
+// @import "spectre-css/spectre";
+@import "font-roboto";
+@import "colors";
+@import "base";
+@import "sidebar";
+@import "content";
+@import "footer";

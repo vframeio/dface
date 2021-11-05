@@ -1,0 +1,79 @@
+/**
+ * @module styles/header.scss
+ */
+
+#nav-logo {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 140px;
+  height: 33px;
+  background-image: url("/assets/img/logos_vframe_blue.svg");
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+  .menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: none;
+    min-width: auto;
+    transform: none;
+    background: none;
+    border: none;
+    padding: 0;
+    div {
+      display: inline-block;
+      margin: 0;
+    }
+    a {
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.025rem;
+      text-transform: uppercase;
+      color: $blue;
+      text-decoration: none;
+      background: none;
+      border-bottom: 1px solid transparent;
+      padding: 0.5rem;
+      border-radius: 0;
+      &:hover span {
+        border-bottom: 1px solid $blue;
+      }
+      &:active span {
+        border-bottom: 1px solid $blue;
+      }
+      &:focus span {
+        border-bottom: 1px solid $blue;
+      }
+    }
+    a.current {
+      border-bottom: 1px solid $blue;
+    }
+    .submenu {
+      display: none;
+    }
+  }
+
+  .btn {
+    // font-size:0.8rem;
+    border: none;
+    color: #12f;
+    font-weight: 400;
+    height: auto;
+    background: transparent;
+    &:hover {
+      background: transparent;
+      color: #00f;
+    }
+  }
+  .navbar-brand {
+    line-height: 0.7rem;
+  }
+}

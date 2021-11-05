@@ -1,0 +1,157 @@
+/**
+ * Form CSS
+ * @module components/common/Select
+ */
+
+/* Select */
+
+.uploadLabel,
+.selectLabel {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.slider .desc,
+.selectLabel span,
+.uploadLabel span,
+.sampleImages .desc {
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  display: block;
+}
+.labelTitle {
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: #666;
+  display: block;
+}
+.uploadLabel .button,
+.select {
+  position: relative;
+  max-width: 100%;
+  min-width: auto;
+  background: #f8f8f8;
+  border-radius: 0.125rem;
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.select select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.select:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0.375rem;
+  transform: translateY(-0.125rem);
+  width: 0;
+  height: 0;
+  border-left: 0.375rem solid transparent;
+  border-right: 0.375rem solid transparent;
+  border-top: 0.375rem solid #ddd;
+  pointer-events: none;
+}
+.select.focus {
+  border-color: #11f;
+  background: #fff;
+}
+.select.focus:after {
+  border-top-color: #11f;
+}
+.uploadLabel .button:hover,
+.select:hover {
+  background-color: #fff;
+}
+.select div {
+  width: calc(100% - 1.025rem);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/** Slider */
+
+.slider {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.slider .desc {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+/** Checkbox */
+
+.checkboxes {
+  width: 100%;
+}
+.checkboxes > div {
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  color: #666;
+  position: relative;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.checkboxes > div:after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  right: 0rem;
+  transform: translateY(-0.125rem);
+  width: 0;
+  height: 0;
+  border-left: 0.375rem solid transparent;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.375rem solid #bbb;
+  pointer-events: none;
+}
+.checkboxes > div:hover {
+  color: #000;
+}
+.checkboxes > div:hover:after {
+  border-bottom-color: #888;
+}
+.checkboxes.advanced > div:after {
+  border-bottom: 0;
+  border-top: 0.375rem solid #bbb;
+}
+.checkboxes.advanced > div:hover:after {
+  border-top-color: #888;
+}
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.checkbox span {
+  display: inline-block;
+  margin-left: 5px;
+}
+.checkbox:hover {
+  color: #000;
+}

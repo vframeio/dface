@@ -1,0 +1,224 @@
+/**
+ * Base application / container styles
+ * @module styles/base.scss
+ */
+
+$font-mono: "Roboto Mono", "Andale Mono", monospace;
+$font-sans: "Roboto", "HelveticaNeue", "Helvetica Neue", "Helvetica", sans-serif;
+
+html {
+  height: 100%;
+  width: 100%;
+  font-size: 16px;
+  overflow-y: scroll;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-sans;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #111;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  a {
+    text-decoration: none;
+    color: $blue;
+    &:visited {
+      text-decoration: none;
+      &:hover {
+        color: lighten(desaturate($blue, 20%), 10%);
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+    &:focus {
+      outline: 0;
+      color: $blue;
+    }
+  }
+
+  & > .container {
+    // padding-bottom: 1rem;
+  }
+  .container p {
+    line-height: 1.6rem;
+    margin: 0.5rem 0 0.5rem 0;
+    a {
+      &:hover {
+        text-decoration: none;
+      }
+      &:focus {
+        text-decoration: underline;
+      }
+      img {
+        border-bottom: none;
+      }
+    }
+    a.no-underline {
+      text-decoration: none;
+      border-bottom: 0;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  img {
+    max-width: 720px;
+  }
+
+  ul {
+    li {
+      list-style: square;
+    }
+  }
+  ol {
+    list-style: decimal;
+  }
+  .footnote {
+    ol {
+      list-style-type: none;
+      li {
+        font-size: 0.65rem;
+        color: #666;
+        p {
+          font-size: 0.65rem;
+          color: #666;
+        }
+      }
+    }
+  }
+  a.footnote {
+    font-size: 10px;
+    line-height: 0px;
+    position: relative;
+    display: inline-block;
+    bottom: 7px;
+    text-decoration: none;
+    color: #333;
+    border: 0;
+    left: -1px;
+    transition-duration: 0s;
+  }
+  .backlinks a {
+    color: #333;
+    font-size: 10px;
+    text-decoration: none;
+    border: 0;
+    font-weight: bold;
+    position: relative;
+    bottom: 5px;
+    margin-right: 2px;
+  }
+
+  a.btn {
+    border: 1px solid #4368de;
+    border-radius: 4px;
+    color: #4368de;
+    text-decoration: none;
+    background: #fff;
+    &:focus,
+    &:hover {
+      border-color: $blue;
+      color: $blue;
+      background: #fff;
+    }
+  }
+  .img-center {
+    margin: 0 auto;
+  }
+}
+
+/* container for all content */
+
+.desktop .content {
+  min-height: calc(100vh - 8rem - 4.75rem);
+}
+.desktop .container {
+  margin: 20px 20px 20px 260px;
+  p {
+    max-width: 720px;
+  }
+}
+.container.defaultLayout {
+  padding-bottom: 100px;
+}
+.container-caption {
+  margin-top: 10px;
+  p {
+    font-size: 0.75rem;
+    color: #666;
+  }
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #666;
+}
+
+p {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  a {
+    text-decoration: none;
+    color: $blue;
+    &:visited {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+h2 {
+  font-size: 1.75rem;
+  margin: 0rem 0 1rem 0;
+}
+h3 {
+  font-size: 1.25rem;
+  margin: 1rem 0 0.5rem 0;
+}
+h4 {
+  font-size: 1.125rem;
+}
+
+h3 a:hover,
+h3 a:hover {
+  color: darken($dark-color, 20%);
+  text-decoration: none;
+}
+h4 a,
+h4 a:visited,
+h3 a,
+h3 a:visited {
+  color: $dark-color;
+  text-decoration: none;
+}
+
+pre {
+  font-family: $font-mono;
+}
+
+code {
+  font-family: $font-mono;
+  p {
+    font-size: 0.75rem;
+    &:first-child {
+      padding-top: 0.5rem;
+    }
+  }
+}

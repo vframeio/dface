@@ -1,0 +1,19 @@
+anchors:
+    yoloface-base: &yoloface-base
+        name: YoloFace
+        width: 1280
+        height: 1280
+        iou: 0.45
+        nms_threshold: 0.4
+        threshold: 0.5
+        resize_enabled: True
+
+models:
+    
+    yoloface-nn-15:
+        <<: *yoloface-base
+        name: Nano 1.15 (12MB)
+
+    yoloface-nn-14:
+        <<: *yoloface-base
+        name: Nano 1.14 (12MB)

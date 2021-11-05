@@ -1,0 +1,65 @@
+/**
+ * Roboto font
+ * @module styles/font-roboto.css
+ */
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/assets/fonts/roboto/Roboto_300.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/roboto/Roboto_300.woff") format("woff"),
+    url("/assets/fonts/roboto/Roboto_300.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Roboto_300.svg#Roboto") format("svg"),
+    url("/assets/fonts/roboto/Roboto_300.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/roboto/Roboto_400.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/roboto/Roboto_400.woff") format("woff"),
+    url("/assets/fonts/roboto/Roboto_400.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Roboto_400.svg#Roboto") format("svg"),
+    url("/assets/fonts/roboto/Roboto_400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/fonts/roboto/Roboto_500.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/roboto/Roboto_500.woff") format("woff"),
+    url("/assets/fonts/roboto/Roboto_500.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Roboto_500.svg#Roboto") format("svg"),
+    url("/assets/fonts/roboto/Roboto_500.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/fonts/roboto/Roboto_700.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/roboto/Roboto_700.woff") format("woff"),
+    url("/assets/fonts/roboto/Roboto_700.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Roboto_700.svg#Roboto") format("svg"),
+    url("/assets/fonts/roboto/Roboto_700.ttf") format("truetype");
+}
+
+/* Mono */
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/roboto/Roboto_Mono_400.eot?#iefix")
+      format("embedded-opentype"),
+    url("/assets/fonts/roboto/Roboto_Mono_400.woff") format("woff"),
+    url("/assets/fonts/roboto/Roboto_500.woff2") format("woff2"),
+    url("/assets/fonts/roboto/Roboto_400.svg#Roboto") format("svg"),
+    url("/assets/fonts/roboto/Roboto_400.ttf") format("truetype");
+}
