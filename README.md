@@ -61,7 +61,7 @@ python3 -m http.server 8000
 
 - Navigate to http://localhost:8000/emoji.html
 - Emoji are listed in `components/common/Emoji.js`, follow the pattern to add new ones
-- Emoji are grouped by classes. The list of classes should correspond to the emojiOptions in `onstants/index.js`
+- Emoji are grouped by classes. The list of classes should correspond to the emojiOptions in `constants/index.js`
 
 ## Deployment
 
