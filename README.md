@@ -1,6 +1,10 @@
-# VFRAME DFace
+# VFRAME DFACE
 
-VFRAME DFace is a web application that performs high quality face redaction in a web browser using YOLOv5 computer vision models and Tensorflow.js.
+![DFACE Screenshot](docs/screenshot.jpg)
+
+DFACE is a web application that performs high quality face redaction in a web browser using YOLOv5 computer vision models and Tensorflow.js.
+
+
 
 ## Environment Setup
 
