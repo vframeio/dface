@@ -10,10 +10,7 @@ anchors:
 
 models:
     
-    yoloface-nn-15:
+    yoloface-18-nn:
         <<: *yoloface-base
-        name: Nano 1.15 (12MB)
-
-    yoloface-nn-14:
-        <<: *yoloface-base
-        name: Nano 1.14 (12MB)
+        notes: rotated faces
+        name: Nano 1.18 1280px (12MB)
