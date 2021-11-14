@@ -11,14 +11,14 @@ export default function Header() {
       <h1>
         <Link href="/">DFACE</Link>
       </h1>
-      <p className="hello">
-        Use AI locally to redact faces
-      </p>
 
-      <p className="hello-links">
+      <p className="hello">
         <Link href="/guide">Guide</Link> - <Link href="/faq">FAQ</Link> - <Link href="/about">About</Link>
       </p>
 
+      <p className="hello">
+        Redact faces privately using neural network face detection in your browser.
+      </p>
     </div>
   );
 }

@@ -15,7 +15,6 @@ export default function Intro({ onDrop, settings }) {
    */
   const handleClick = useCallback(() => {
     setClicked(true);
-    console.log("duh");
   });
 
   const handleDrop = useCallback(
@@ -38,7 +37,7 @@ export default function Intro({ onDrop, settings }) {
     >
       <div className="dropzone">
         <div className="introText">
-          <span>+</span>
+          <span>Add Image intro</span>
           <br />
           <span>Drag-and-drop images here</span>
         </div>

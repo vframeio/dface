@@ -175,7 +175,7 @@ export default function App() {
             processing={isWorking}
           >
             <div className="introText">
-              <div className="introTextA">+</div>
+              <div className="introTextA">Add Image</div>
               <div className="introTextB">Choose or drop photo</div>
             </div>
           </DropZone>
