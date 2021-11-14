@@ -12,5 +12,8 @@ models:
     
     yoloface-18-nn:
         <<: *yoloface-base
-        notes: rotated faces
-        name: Nano 1.18 1280px (12MB)
+        name: Nano 1.18 (12MB)
+
+    yoloface-18-sm:
+        <<: *yoloface-base
+        name: Nano 1.18 (50MB)
