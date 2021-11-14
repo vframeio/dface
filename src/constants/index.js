@@ -32,7 +32,24 @@ export const shapeOptions = [
 /** Sample images */
 
 export const sampleImages = [
-  { filename: "face-snowden-x1.jpg" },
+  { 
+    filename: "chuttersnap-8I423fRMwjM-unsplash.jpg",
+    url: 'https://unsplash.com/photos/8I423fRMwjM',
+    via: 'chuttersnap',
+    license: 'License: Unsplash'
+  },
+  { 
+    filename: "ehimetalor-akhere-unuabona-72doRdFx-Lo-unsplash.jpg",
+    url: 'https://unsplash.com/photos/72doRdFx-Lo',
+    via: 'Ehimetalor Unuabona',
+    license: 'License: Unsplash'
+  },
+  { 
+    filename: "ehimetalor-akhere-unuabona-06WiXBqhs_A-unsplash.jpg",
+    url: 'https://unsplash.com/photos/06WiXBqhs_A',
+    via: 'Ehimetalor Unuabona',
+    license: 'License: Unsplash'
+  },
 ];
 
 /** Color palettes */
@@ -57,7 +74,6 @@ export const palettes = {
   ],
   primary: ["#f70707", "#f78f07", "#f7eb07", "#02c908", "#4163fc", "#a241fc"],
   neon: ["#fc53da", "#28fc20", "#fcfc20", "#20fcf5"],
-  halloween: ["#E02401", "#F78812", "#AB6D23", "#51050F", "#3D0000"],
 };
 
 export const paletteOptions = objectOptions(palettes);

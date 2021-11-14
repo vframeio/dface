@@ -35,22 +35,27 @@
 .header {
   margin-bottom: 10px;
   h1 {
-    font-size: 32px;
-    line-height: 32px;
+    font-size: 26px;
+    line-height: 26px;
     letter-spacing: 6px;
     margin: 0 0 0.75rem 0;
     a {
       color: transparent;
-      text-shadow: 0 0 4px $blue;
+      text-shadow: 0 0 4px #000;
       transition: text-shadow 0.15s;
       &:hover {
-        text-shadow: 0 0 2px $blue;
+        text-shadow: 0 0 2px #111;
       }
     }
   }
 
   p.hello {
-    font-size: 0.9375rem;
+    font-size: 0.75rem;
+    color: #333;
+    font-weight: 600;
+  }
+  p.hello-links {
+    font-size: 0.75rem;
     color: #333;
     a {
       font-size: 0.875rem;

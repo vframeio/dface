@@ -31,8 +31,8 @@ import {
 export default function App() {
   const [settings, setSettings] = useState({
     detect: {
-      model: "yoloface-nn-15",
-      confidence: 0.30,
+      model: "yoloface-18-nn",
+      confidence: 0.25,
     },
     process: {
       effect: "color",
@@ -175,7 +175,7 @@ export default function App() {
             processing={isWorking}
           >
             <div className="introText">
-              <div className="introTextA">Add Image</div>
+              <div className="introTextA">+</div>
               <div className="introTextB">Choose or drop photo</div>
             </div>
           </DropZone>

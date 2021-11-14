@@ -17,8 +17,8 @@ export default function SampleImages({ onClick }) {
               src={`/assets/img/sample/${sample.filename}`}
               onClick={onClick}
             />
-            {sample.via && <a href={sample.url}>{sample.via}</a>}{" "}
-            {`(${sample.license || "sample"})`}
+            via {sample.via && <a href={sample.url}>{sample.via}</a>}{" "}<br/>
+            {`${sample.license || "sample"}`}
           </div>
         ))}
       </div>

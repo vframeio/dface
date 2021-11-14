@@ -45,7 +45,7 @@ export default function Settings({
           processing={processing}
         >
           <div className="introText">
-            Add Image
+            + Add Image
           </div>
         </DropZone>
       )}
@@ -202,7 +202,6 @@ export default function Settings({
               onChange={onResultsSettingsChange}
             />
 
-            {/*
             <Select
               group="detect"
               name="model"
@@ -213,7 +212,7 @@ export default function Settings({
               title="Detection Model"
               onChange={onChange}
             />
-            */}
+            
           </>
         )}
       </div>
