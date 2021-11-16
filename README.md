@@ -1,8 +1,8 @@
-# VFRAME DFACE
+# DFACE.app
 
 ![DFACE Screenshot](docs/assets/screenshot.jpg)
 
-DFACE is a web application that performs high quality face redaction in a web browser using YOLOv5 computer vision models and Tensorflow.js.
+[DFACE.app](https://dface.app) is a web application that performs high quality face redaction in a web browser using YOLOv5 computer vision models and Tensorflow.js. Made by VFRAME.io.
 
 
 
@@ -70,6 +70,20 @@ This command will build the static site to the `out/` directory, suitable for de
 ```bash
 yarn build
 ```
+
+
+## Credits
+
+- DFACE uses the YOLOV5 object detection architecture by [Glenn Jocher](https://github.com/ultralytics/yolov5) based on the original [YOLO](https://arxiv.org/abs/1506.02640) by Joseph Redmon
+
+
+## Acknowledgments
+
+VFRAME gratefully acknowledges support from NLnet for the continued development of DFACE:
+
+![](docs/assets/nlnet.jpg)
+
+VFRAME received support from the NLNet Foundation and Next Generation Internet (NGI0) supported research and development of face blurring and biometric redaction tools during 2019 - 2021. Funding was provided through the NGI0 Privacy Enhancing Technologies Fund, a fund established by NLnet with financial support from the European Commission’s Next Generation Internet program. 
 
 
 ## Licenses
