@@ -16,4 +16,4 @@ models:
 
     yoloface-18-sm:
         <<: *yoloface-base
-        name: Nano 1.18 (50MB)
+        name: Small 1.18 (50MB)
