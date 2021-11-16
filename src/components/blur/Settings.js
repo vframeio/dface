@@ -45,7 +45,7 @@ export default function Settings({
           processing={processing}
         >
           <div className="introText">
-            Add Image
+            + Add Image
           </div>
         </DropZone>
       )}

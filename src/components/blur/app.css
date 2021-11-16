@@ -13,14 +13,14 @@
   text-align: center;
 }
 .introTextA {
-  font-size: 24px;
+  font-size: 6rem;
   color: transparent;
-  text-shadow: 0 0 3px #01e;
+  text-shadow: 0 0 10px #01e;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
 .introTextB {
-  color:  #999;
+  color:  #333;
 }
 
 .emoji {
@@ -131,7 +131,8 @@
 
 .dropzone {
   width: 100%;
-  min-height: 40rem;
+  min-height: 30rem;
+  max-width: 640px;
   max-height: calc(50vh);
   display: flex;
   align-items: center;

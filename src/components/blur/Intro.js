@@ -37,7 +37,7 @@ export default function Intro({ onDrop, settings }) {
     >
       <div className="dropzone">
         <div className="introText">
-          <span>Add Image intro</span>
+          <span>+</span>
           <br />
           <span>Drag-and-drop images here</span>
         </div>

@@ -5,20 +5,32 @@
 
 export const modelzoo = {
   "yoloface-18-nn": {
-    "name": "Nano 1.18 1280px (12MB)",
+    "name": "Nano 1.18 (12MB)",
     "width": 1280,
     "height": 1280,
     "iou": 0.45,
     "nms_threshold": 0.4,
     "threshold": 0.5,
-    "resize_enabled": true,
-    "notes": "rotated faces"
+    "resize_enabled": true
+  },
+  "yoloface-18-sm": {
+    "name": "Small 1.18 (50MB)",
+    "width": 1280,
+    "height": 1280,
+    "iou": 0.45,
+    "nms_threshold": 0.4,
+    "threshold": 0.5,
+    "resize_enabled": true
   }
 };
 
 export const modelzooOptions = [
   {
     "name": "yoloface-18-nn",
-    "label": "Nano 1.18 1280px (12MB)"
+    "label": "Nano 1.18 (12MB)"
+  },
+  {
+    "name": "yoloface-18-sm",
+    "label": "Small 1.18 (50MB)"
   }
 ];
