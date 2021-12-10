@@ -4,16 +4,16 @@
  */
 
 import * as tf from "@tensorflow/tfjs";
+import { clamp } from "utils/math_utils";
 
 /**
  * Use a model to detect objects in an image
  * @param  {tf.Model} model       the tensorflow model
  * @param  {Object}   image       an object containing { image, url, filename }
- * @param  {Number}   threshold   a threshold (0.0 - 1.0)
  * @return {Object}               an object containing { image, detections }
  *                                detections[] = { bbox, score, class }
  */
-export default async function detect(model, image, threshold) {
+export default async function detect(model, image) {
   const canvas = window.document.createElement("canvas");
   const ctx = canvas.getContext("2d");
 
@@ -44,9 +44,16 @@ export default async function detect(model, image, threshold) {
   for (let index = 0; index < count; index++) {
     let [x1, y1, x2, y2] = boxes.slice(index * 4, (index + 1) * 4);
     detections[index] = {
-      bbox: { x1, y1, x2, y2 },
+      bbox: {
+        x1: clamp(x1, 0, canvas.width),
+        y1: clamp(y1, 0, canvas.height),
+        x2: clamp(x2, 0, canvas.width),
+        y2: clamp(y2, 0, canvas.height),
+      },
       score: scores[index],
-      class: classes[index],
+      class: model.settings.labels
+        ? model.settings.labels[classes[index]]
+        : classes[index],
     };
   }
 

@@ -24,7 +24,7 @@
     padding: 0;
   }
   .toc li {
-    margin: 0;
+    margin: 0 0 3px 0;
     padding: 0 0 0.25rem 0.5rem;
     text-indent: -0.5rem;
     font-size: 0.875rem;
@@ -50,25 +50,30 @@
   }
 
   p.hello {
-    font-size: 0.75rem;
-    color: #333;
+    font-size: 1rem;
+    color: #111;
     font-weight: 600;
   }
   p.hello-links {
-    font-size: 0.75rem;
+    font-size: 0.825rem;
     color: #333;
     a {
-      font-size: 0.875rem;
-      font-weight: 400;
-      text-transform: uppercase;
     }
   }
 }
 
 /* mobile */
-
-.mobile .header,
+.mobile .sidebar-content {
+  padding: 0 1.25rem;
+}
+.mobile .header {
+  padding: 1.25rem 1.25rem 0 1.25rem;
+}
 .mobile .content,
 .mobile .footer {
-  padding: 0.5rem;
+  padding: 1.25rem; 
+  .sampleImages img{
+    width: 6rem;
+    height: 4rem;
+  }
 }

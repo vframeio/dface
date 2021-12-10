@@ -12,11 +12,7 @@ export default function Loader({
   object,
   indeterminate,
 }) {
-  if (!object) {
-    return null;
-  }
-
-  const { loading, progress, error } = object;
+  const { loading, progress, error } = object || { loading: true };
 
   if (error) {
     return (

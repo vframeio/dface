@@ -20,7 +20,7 @@
   text-transform: uppercase;
 }
 .introTextB {
-  color:  #333;
+  color: #333;
 }
 
 .emoji {
@@ -57,15 +57,33 @@
   display: inline-block;
   margin-bottom: 1rem;
   margin-right: 1rem;
-}
-.results img {
+  opacity: 1;
+  width: 720px;
   max-width: 100%;
-  max-height: 80vh;
-  display: block;
-  pointer-events: none;
+  animation: fadeIn 0.1s;
 }
-.results.placeholder img {
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.results .image {
+  background-size: cover;
+  background-position: center center;
+  background-color: #ddd;
+  width: 100%;
+}
+.results.placeholder .image {
   opacity: 0.5;
+  filter: blur(1px);
+  overflow: hidden;
 }
 .results .meta {
   width: 100%;
@@ -149,7 +167,7 @@
 .dropzone.condensed {
   min-height: auto;
   padding: 1.25rem 0;
-  color:  transparent;
+  color: transparent;
   text-shadow: 0 0 3px #01e;
   font-size: 18px;
   border: 1px dashed #01e;
@@ -179,20 +197,36 @@
 .sampleImages {
   margin-bottom: 0.5rem;
 }
+.sampleImages .isWorking {
+  opacity: 0.5;
+  pointer-events: none;
+}
 .sampleImages > div {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   font-size: 0.75rem;
-  margin-top: 0.5rem;
 }
 .sampleImages > div > div {
   margin-right: 0.5rem;
+  margin-top: 0.5rem;
 }
 .sampleImages img {
-  height: 6rem;
+  height: 5rem;
+  width: 7rem;
+  overflow: hidden;
   cursor: grab;
   display: block;
   margin-bottom: 0.25rem;
+}
+.mobile .sampleImages img {
+  width: 6.75rem;
+}
+.sampleImages a, .sampleImages a:visited {
+  color: #666;
+}
+.sampleImages a:active, .sampleImages a:hover {
+  color: #333;
+  text-decoration: underline;
 }
 
 /* Loader */
@@ -204,6 +238,7 @@
   width: 100%;
   height: 100%;
   background: rgba(255, 255, 255, 0.75);
+  z-index: 2;
 }
 .loader .inner {
   position: absolute;

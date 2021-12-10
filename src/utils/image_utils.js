@@ -3,8 +3,18 @@
  * @module utils/image_utils.js
  */
 
+/**
+ * Preload a set of images
+ * @param  {Array} urls  array of { url } objects
+ */
 export const preloadImages = (urls) => batchPromise(urls, 4, preloadImage);
 
+/**
+ * Apply a function to a set of objects in batches
+ * @param  {Array} list       objects to affect
+ * @param  {Number} count     concurrent functions
+ * @param  {Function} method  function to apply
+ */
 export const batchPromise = (list, count, method) => {
   // console.log(list, count, method)
   let cancelled = false;
@@ -52,6 +62,13 @@ export const batchPromise = (list, count, method) => {
 };
 
 const preloadedImageCache = {};
+
+/**
+ * Preload an image
+ * @param  {string}  options.url      the URL
+ * @param  {string}  options.filename the URL's corresponding filename
+ * @param  {Boolean} cache            whether to cache this image
+ */
 export const preloadImage = ({ url, filename }, cache = false) =>
   new Promise((resolve, reject) => {
     if (cache && preloadedImageCache[url]) {
@@ -90,6 +107,16 @@ export const preloadImage = ({ url, filename }, cache = false) =>
     }
   });
 
+/**
+ * Crop an image
+ * @param  {String} url.url     the URL (see preloadImage format)
+ * @param  {Number} crop.x      the X coordinate of the top-left corner
+ * @param  {Number} crop.y      the Y coordinate of the top-left corner
+ * @param  {Number} crop.w      the width of the cropped region
+ * @param  {Number} crop.h      the height of the cropped region
+ * @param  {Number} maxSide     if present, the resulting crop will be scaled so neither side is larger than this value
+ * @return {Canvas}             the cropped image, as a canvas
+ */
 export const cropImage = (url, crop, maxSide) => {
   return new Promise((resolve, reject) => {
     preloadImage(url, true).then((image) => {
@@ -140,3 +167,20 @@ export const cropImage = (url, crop, maxSide) => {
     });
   });
 };
+
+/**
+ * Async wrapper for canvas.toBlob
+ * @param  {Canvas} canvas  the canvas to be converted
+ * @param  {string} type    MIME type (image/png or image/jpeg)
+ * @param  {number} quality quality [0-1]
+ * @return {Blob}           canvas as a blob
+ */
+export function canvasToBlob(canvas, type, quality) {
+  return new Promise(function (resolve) {
+    try {
+      canvas.toBlob(resolve, type, quality);
+    } catch (error) {
+      reject(error);
+    }
+  });
+}

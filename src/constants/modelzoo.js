@@ -11,7 +11,10 @@ export const modelzoo = {
     "iou": 0.45,
     "nms_threshold": 0.4,
     "threshold": 0.5,
-    "resize_enabled": true
+    "resize_enabled": true,
+    "labels": [
+      "Face"
+    ]
   },
   "yoloface-18-sm": {
     "name": "Small 1.18 (50MB)",
@@ -20,7 +23,10 @@ export const modelzoo = {
     "iou": 0.45,
     "nms_threshold": 0.4,
     "threshold": 0.5,
-    "resize_enabled": true
+    "resize_enabled": true,
+    "labels": [
+      "Face"
+    ]
   }
 };
 

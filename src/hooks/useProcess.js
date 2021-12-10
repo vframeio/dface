@@ -13,12 +13,17 @@ import { process } from "image/process";
  * @param  {Array}  detections  detections from useDetection
  * @param  {Object} settings    application settings
  */
-export default function useProcess(detections, settings) {
-  const ready = useMemo(() => detections?.length, [detections]);
+export default function useProcess(
+  model,
+  detections,
+  settings,
+  resultsSettings
+) {
+  const ready = useMemo(() => detections?.results?.length, [detections]);
 
   const method = useMemo(
-    () => async (image) => await process(image, settings),
-    [detections, settings]
+    () => async (image) => await process(image, settings, resultsSettings),
+    [detections, settings, resultsSettings]
   );
 
   const revoke = useMemo(
@@ -27,8 +32,9 @@ export default function useProcess(detections, settings) {
   );
 
   return useAsyncTask({
-    tasks: detections,
-    dependencies: [detections, settings],
+    name: "process",
+    tasks: detections?.results,
+    dependencies: [model, detections, settings],
     ready,
     method,
     revoke,

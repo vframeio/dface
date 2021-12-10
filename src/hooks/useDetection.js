@@ -15,8 +15,8 @@ import detect from "image/detect";
  */
 export default function useDetection(model, images) {
   const ready = useMemo(
-    () => !model?.loading && images?.length,
-    [model?.model, images]
+    () => !model?.loading && model?.model && images?.length,
+    [model, images]
   );
 
   const method = useMemo(
@@ -25,6 +25,7 @@ export default function useDetection(model, images) {
   );
 
   return useAsyncTask({
+    name: "detect",
     tasks: images,
     dependencies: [model?.model, images],
     ready,

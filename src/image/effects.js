@@ -9,6 +9,70 @@ import { choice, randint, randsign, hypotenuse, mod } from "utils/math_utils";
 import { preloadImage } from "utils/image_utils";
 
 /**
+ * Apply bbox with label. This effect does NOT redact the underlying image.
+ * @param  {Object} crop     a cropped canvas
+ * @param  {Object} settings application settings
+ */
+export function bbox(crop, settings, detection) {
+  const palette = palettes[settings.color.palette];
+  const { width, height } = crop.canvas;
+  if (!palette) {
+    throw new Error("Unknown color palette");
+  }
+
+  // Comment out this line to preserve any pre-blurring
+  crop.ctx.clearRect(0, 0, width, height);
+
+  /** Stroke the bounding box */
+  // crop.ctx.strokeStyle = choice(palette);
+  const color = "#00ff00";
+  const textColor = "#000000";
+  const border = 6;
+  const fontSize = 10;
+
+  const halfBorder = border / 2;
+  crop.ctx.strokeStyle = color;
+  crop.ctx.lineWidth = border;
+  crop.ctx.strokeRect(
+    Math.ceil(halfBorder),
+    Math.ceil(halfBorder),
+    Math.floor(width - border),
+    Math.floor(height - border)
+  );
+
+  /** Prepare the label */
+  const label = `${detection.class} (${Math.round(detection.score * 100)}%)`;
+  const textX = Math.ceil(halfBorder);
+  const textY = Math.ceil(halfBorder);
+  const textBorder = halfBorder;
+  crop.ctx.textBaseline = "top";
+  crop.ctx.font = `${fontSize}px Roboto`;
+
+  /** Measure the label area */
+  const textMetrics = crop.ctx.measureText(label);
+  // const textWidth =
+  //   Math.abs(textMetrics.actualBoundingBoxLeft) +
+  //   Math.abs(textMetrics.actualBoundingBoxRight);
+  // const textHeight = Math.abs(textMetrics.fontBoundingBoxDescent);
+
+  const textWidth = textMetrics.width;
+  const textHeight = fontSize;
+
+  /** Draw the label background */
+  crop.ctx.fillStyle = color;
+  crop.ctx.fillRect(
+    textX,
+    textY,
+    textWidth + textBorder,
+    textHeight + textBorder
+  );
+
+  /** Draw the label text */
+  crop.ctx.fillStyle = textColor;
+  crop.ctx.fillText(label, textBorder, textBorder);
+}
+
+/**
  * Apply color fill processing
  * @param  {Object} crop     a cropped canvas
  * @param  {Object} settings application settings

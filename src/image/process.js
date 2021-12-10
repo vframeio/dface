@@ -7,7 +7,7 @@ import * as StackBlur from "stackblur-canvas";
 import { choice, hypotenuse } from "utils/math_utils";
 import { softEdgeEffects, preBlurEffects, effectNames } from "constants/index";
 import * as effects from "image/effects";
-import canvasToBlob from "async-canvas-to-blob";
+import { canvasToBlob } from "utils/image_utils";
 import { getOutputFilename, getOutputType } from "utils/data_utils";
 import saveAs from "file-saver";
 
@@ -18,7 +18,7 @@ import saveAs from "file-saver";
  * @return {Object}            response containing { url, image, detections }
  *                             NOTE: this url must be manually revoked!
  */
-export async function process(detection, settings) {
+export async function process(detection, settings, resultsSettings) {
   const { image, detections } = detection;
   const source = copyToCanvas(image.image);
   const dest = copyToCanvas(image.image);
@@ -47,13 +47,13 @@ export async function process(detection, settings) {
   // Convert to blob
   const outputBlob = await canvasToBlob(
     dest.canvas,
-    getOutputType(image.filename, settings),
+    getOutputType(image.filename, resultsSettings),
     0.92
   );
 
   // Auto-save the blob as a local file
-  if (settings.process.autoDownload) {
-    saveAs(outputBlob, getOutputFilename(image.filename, settings));
+  if (resultsSettings.process.autoDownload) {
+    saveAs(outputBlob, getOutputFilename(image.filename, resultsSettings));
   }
 
   // Get an object URL for the blob
@@ -82,6 +82,9 @@ async function processDetection(source, dest, bbox, settings, effect) {
     settings,
     effect
   );
+  if (!softCrop.width || !softCrop.height) {
+    return;
+  }
 
   // Extract the cropped region
   const crop = cropImage(source, softCrop);

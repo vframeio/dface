@@ -32,10 +32,10 @@ export default function useModel(modelName) {
         ...state,
         loading: true,
       });
-      await wait(20);
+      await wait(100);
       const weightsPath = `/assets/models/${modelName}/model.json`;
-      console.log(`Loading ${weightsPath}`);
       try {
+        console.log(`Loading ${weightsPath}`);
         const tfModel = await tf.loadGraphModel(weightsPath, {
           onProgress: (progress) => setState({ ...state, progress }),
         });

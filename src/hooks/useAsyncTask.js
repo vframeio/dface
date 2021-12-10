@@ -16,6 +16,7 @@ import { wait } from "utils/async_utils";
  * @return {Object}                        state object containing { loading, progress, error, startTime, endTime, results }
  */
 export default function useAsyncTask({
+  name,
   tasks,
   ready,
   method,
@@ -32,11 +33,19 @@ export default function useAsyncTask({
   });
 
   useEffect(() => {
+    if (dependencies.some((dependency) => dependency?.loading)) {
+      setState({ ...state, progress: 0, results: null });
+      return;
+    }
     if (!ready || state.loading) {
+      setState({
+        loading: false,
+        results: null,
+      });
       return;
     }
     let cancelled = false;
-    if (revoke && state.results?.length) {
+    if (!ready && revoke && state.results?.length) {
       revoke(state.results);
     }
     async function perfomAsyncTask() {
@@ -49,7 +58,7 @@ export default function useAsyncTask({
         endTime: +new Date(),
       };
       setState(newState);
-      await wait(50);
+      await wait(100);
       try {
         const results = [];
         for (let index = 0; index < tasks.length; index++) {

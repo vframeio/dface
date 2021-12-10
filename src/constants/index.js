@@ -41,13 +41,13 @@ export const sampleImages = [
   { 
     filename: "ehimetalor-akhere-unuabona-72doRdFx-Lo-unsplash.jpg",
     url: 'https://unsplash.com/photos/72doRdFx-Lo',
-    via: 'Ehimetalor Unuabona',
+    via: 'E. Unuabona',
     license: 'License: Unsplash'
   },
   { 
     filename: "ehimetalor-akhere-unuabona-06WiXBqhs_A-unsplash.jpg",
     url: 'https://unsplash.com/photos/06WiXBqhs_A',
-    via: 'Ehimetalor Unuabona',
+    via: 'E. Unuabona',
     license: 'License: Unsplash'
   },
 ];

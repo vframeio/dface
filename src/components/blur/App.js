@@ -70,26 +70,33 @@ export default function App() {
   const [images, setImages] = useState([]);
   const model = useModel(settings.detect.model);
   const detections = useDetection(model, images);
-  const processed = useProcess(detections?.results, settings);
+  const processed = useProcess(model, detections, settings, resultsSettings);
   const [isWorking, setIsWorking] = useState(false);
 
   useEffect(() => {
     setIsWorking(
       !!images.length &&
-        (!detections?.results?.length || !processed?.results?.length)
+        (model?.loading ||
+          detections?.loading ||
+          processed?.loading ||
+          !detections?.results ||
+          !processed?.results)
     );
-  }, [detections, processed]);
+  }, [model, detections, processed]);
 
-  const handleDrop = useCallback((newImages) => {
-    setImages(newImages);
-    setResultsSettings({
-      ...resultsSettings,
-      process: {
-        ...resultsSettings.process,
-        showSamples: false,
-      },
-    });
-  }, []);
+  const handleDrop = useCallback(
+    (newImages) => {
+      setImages(newImages);
+      setResultsSettings({
+        ...resultsSettings,
+        process: {
+          ...resultsSettings.process,
+          showSamples: false,
+        },
+      });
+    },
+    [resultsSettings]
+  );
 
   const handleSample = useCallback(
     (event) => {
@@ -100,13 +107,6 @@ export default function App() {
           filename: getFilename(event.target.src),
         },
       ]);
-      setResultsSettings({
-        ...resultsSettings,
-        process: {
-          ...resultsSettings.process,
-          showSamples: false,
-        },
-      });
     },
     [settings]
   );
@@ -151,7 +151,7 @@ export default function App() {
         showSamples: true,
       },
     });
-  }, []);
+  }, [resultsSettings]);
 
   return (
     <>
@@ -159,7 +159,7 @@ export default function App() {
         <Settings
           settings={settings}
           resultsSettings={resultsSettings}
-          processing={model.loading || detections.loading || processed.loading}
+          processing={isWorking}
           onChange={handleSettingsChange}
           onResultsSettingsChange={handleResultsSettingsChange}
           onDrop={handleDrop}
@@ -188,17 +188,6 @@ export default function App() {
               errorMessage="Please try a different model."
             />
           )}
-          {/*isWorking && (
-            <Loader
-              object={{ loading: isWorking }}
-              message={
-                detections.loading
-                  ? "Detecting faces..."
-                  : "Processing images..."
-              }
-              indeterminate
-            />
-          )*/}
           {!!images?.length && isWorking && (
             <ResultsPlaceholder images={images} />
           )}
@@ -218,7 +207,7 @@ export default function App() {
             />
           )}
           {resultsSettings.process.showSamples && (
-            <SampleImages onClick={handleSample} />
+            <SampleImages onClick={handleSample} isWorking={isWorking} />
           )}
           <Emoji />
         </div>

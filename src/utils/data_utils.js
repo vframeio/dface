@@ -53,10 +53,13 @@ export const splitFilename = (filename) => {
 
 export const getOutputType = (url, settings) => {
   if (settings.process.forceJPG) {
-    return "image/jpg";
+    return "image/jpeg";
   }
   const filename = getOutputFilename(url, settings);
   const [fpart, ext] = splitFilename(filename);
+  if (ext === "jpg") {
+    return "image/jpeg";
+  }
   return `image/${ext}`;
 };
 

@@ -44,9 +44,7 @@ export default function Settings({
           condensed={true}
           processing={processing}
         >
-          <div className="introText">
-            + Add Image
-          </div>
+          <div className="introText">+ Add Image</div>
         </DropZone>
       )}
       <Select
@@ -157,7 +155,9 @@ export default function Settings({
       />
 
       <div className={clsx({ checkboxes: true, advanced })}>
-        <div onClick={toggleAdvanced}>Advanced Options</div>
+        <div className="title" onClick={toggleAdvanced}>
+          Advanced Options
+        </div>
         {advanced && (
           <>
             <Checkbox
@@ -212,7 +212,6 @@ export default function Settings({
               title="Detection Model"
               onChange={onChange}
             />
-            
           </>
         )}
       </div>

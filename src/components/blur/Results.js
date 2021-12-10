@@ -28,9 +28,16 @@ export default function Results({
 
   return (
     <div className="results">
-      {results.map((result, index) => (
+      {results?.map((result, index) => (
         <div key={index} className="result">
-          <img src={result.url} />
+          <div
+            className="image"
+            style={{
+              backgroundImage: `url(${result.url}), url(${result.image.url})`,
+              maxWidth: result.image.image.naturalWidth,
+              aspectRatio: `${result.image.image.naturalWidth} / ${result.image.image.naturalHeight}`,
+            }}
+          />
 
           <div className="meta">
             <a

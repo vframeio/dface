@@ -45,6 +45,7 @@ body .container p {
 .bio-images{
   display: flex;
   flex-direction: row;
+  flex-flow: row wrap;
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 2rem;
