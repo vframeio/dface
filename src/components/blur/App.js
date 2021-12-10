@@ -38,17 +38,17 @@ export default function App() {
       effect: "color",
       palette: "blue",
       shape: "rect",
-      softenEdges: 0.05,
-      expand: 0.05,
+      softenEdges: 0.1,
+      expand: 0.1,
     },
     blur: {
-      radius: 0.1,
+      radius: 0.15,
     },
     color: {
       palette: "blue",
     },
     mosaic: {
-      radius: 0.3,
+      radius: 0.15,
     },
     emoji: {
       type: "faces",
@@ -175,7 +175,6 @@ export default function App() {
             processing={isWorking}
           >
             <div className="introText">
-              <div className="introTextA">+</div>
               <div className="introTextB">Choose or drop photo</div>
             </div>
           </DropZone>

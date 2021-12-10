@@ -90,9 +90,9 @@ export default function Settings({
             group="blur"
             name="radius"
             value={settings.blur.radius}
-            min={0.005}
-            max={0.1}
-            step={0.001}
+            min={0.1}
+            max={0.2}
+            step={0.01}
             title="Blur radius"
             onChange={onChange}
           />
@@ -105,7 +105,7 @@ export default function Settings({
             group="mosaic"
             name="radius"
             value={settings.mosaic.radius}
-            min={0.01}
+            min={0.1}
             max={0.3}
             step={0.01}
             title="Mosaic size"

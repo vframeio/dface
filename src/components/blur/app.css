@@ -14,8 +14,7 @@
 }
 .introTextA {
   font-size: 6rem;
-  color: transparent;
-  text-shadow: 0 0 10px #01e;
+  color: #01e;
   margin-bottom: 10px;
   text-transform: uppercase;
 }
@@ -97,8 +96,6 @@
 }
 .results .meta a {
   font-size: 12px;
-  /*color: transparent;*/
-  /*text-shadow: 0 0 2px;*/
   color: #0011ee;
   display: block;
   flex: 1;
@@ -106,8 +103,6 @@
   text-align: center;
 }
 .results .meta a:hover {
-  /*color: transparent;*/
-  /*text-shadow: 0 0 1px #0011ee;*/
   color: #0011ee;
   background: #eee;
 }
@@ -167,8 +162,7 @@
 .dropzone.condensed {
   min-height: auto;
   padding: 1.25rem 0;
-  color: transparent;
-  text-shadow: 0 0 3px #01e;
+  color: #01e;
   font-size: 18px;
   border: 1px dashed #01e;
   text-transform: uppercase;

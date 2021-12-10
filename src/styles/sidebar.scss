@@ -35,16 +35,17 @@
 .header {
   margin-bottom: 10px;
   h1 {
-    font-size: 26px;
+    font-size: 22px;
     line-height: 26px;
-    letter-spacing: 6px;
+    letter-spacing: 4px;
     margin: 0 0 0.75rem 0;
+    img {
+      cursor: pointer;
+    }
     a {
-      color: transparent;
-      text-shadow: 0 0 4px #000;
-      transition: text-shadow 0.15s;
+      color: #00F;
       &:hover {
-        text-shadow: 0 0 2px #111;
+        color: #33F;
       }
     }
   }
@@ -55,7 +56,7 @@
     font-weight: 600;
   }
   p.hello-links {
-    font-size: 0.825rem;
+    font-size: 0.875rem;
     color: #333;
     a {
     }
