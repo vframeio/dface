@@ -138,6 +138,7 @@ yarn-error.log
 
 
 # Next.js build folder
-out/
+# keep out/ for prebuilt static site
+# out/
 .next/
 
