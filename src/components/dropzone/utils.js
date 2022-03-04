@@ -11,14 +11,14 @@ export const supportMultiple =
 export function getDataTransferItems(event) {
   let dataTransferItemsList = [];
   if (event.dataTransfer) {
-    const dt = event.dataTransfer;
-    if (dt.files && dt.files.length) {
-      dataTransferItemsList = dt.files;
-    } else if (dt.items && dt.items.length) {
+    const event_dt = event.dataTransfer;
+    if (event_dt.files && event_dt.files.length) {
+      dataTransferItemsList = event_dt.files;
+    } else if (event_dt.items && event_dt.items.length) {
       // During the drag even the dataTransfer.files is null
       // but Chrome implements some drag store, which is accesible via dataTransfer.items
       return Array.prototype.slice
-        .call(dt.items)
+        .call(event_dt.items)
         .filter((item) => item.kind === "file");
     }
   } else if (event.target && event.target.files) {
@@ -43,8 +43,8 @@ export function allFilesAccepted(files, accept) {
 }
 
 // allow the entire document to be a drag target
-export function onDocumentDragOver(e) {
-  e.preventDefault();
+export function onDocumentDragOver(error) {
+  error.preventDefault();
 }
 
 function accepts(file, acceptedFiles) {

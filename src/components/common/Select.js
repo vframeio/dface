@@ -50,7 +50,7 @@ export default function Select({
           {!selected && defaultOption && (
             <option value="__default__">{defaultOption}</option>
           )}
-          {options.map((option, i) => (
+          {options.map((option, index) => (
             <OptionItem key={option.name} {...option} />
           ))}
         </select>

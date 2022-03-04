@@ -30,7 +30,7 @@ export default function Results({
     <div className="results">
       {results?.map((result, index) => (
         <div key={index} className="result">
-          <img 
+          <img
             src={result.url} alt="Detection result"
             style={{
               maxWidth: result.image.image.naturalWidth,

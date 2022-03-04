@@ -28,7 +28,7 @@
       }
     ],
     "react/react-in-jsx-scope": "off",
-    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/rules-of-hooks": "warn",
     "react-hooks/exhaustive-deps": "warn",
     "linebreak-style": ["error", "unix"],
     "semi": ["warn", "always"]
