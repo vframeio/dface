@@ -2,7 +2,7 @@
 
 ![DFACE Screenshot](docs/assets/screenshot.jpg)
 
-[DFACE.app](https://dface.app) is a web application that performs high quality face redaction in a web browser using YOLOv5 computer vision models and Tensorflow.js. Made by VFRAME.io.
+[DFACE.app](https://dface.app) is a web application that performs private, automatic face redaction in a web browser using YOLOv5 computer vision models and Tensorflow.js. Made by VFRAME.io.
 
 
 
