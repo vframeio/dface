@@ -32,23 +32,24 @@ export const shapeOptions = [
 /** Sample images */
 
 export const sampleImages = [
+
   { 
-    filename: "chuttersnap-8I423fRMwjM-unsplash.jpg",
-    url: 'https://unsplash.com/photos/8I423fRMwjM',
-    via: 'chuttersnap',
-    license: 'License: Unsplash'
+    filename: "51906231762_6fce013c41_c.jpg",
+    url: 'https://www.flickr.com/photos/geolis06/51906231762/',
+    via: 'Georges Lissillour',
+    license: 'Public Domain'
   },
   { 
-    filename: "ehimetalor-akhere-unuabona-72doRdFx-Lo-unsplash.jpg",
-    url: 'https://unsplash.com/photos/72doRdFx-Lo',
-    via: 'E. Unuabona',
-    license: 'License: Unsplash'
+    filename: "51907203661_a090071bc1_c.jpg",
+    url: 'https://www.flickr.com/photos/geolis06/51907203661/',
+    via: 'Georges Lissillour',
+    license: 'Public Domain'
   },
   { 
-    filename: "ehimetalor-akhere-unuabona-06WiXBqhs_A-unsplash.jpg",
-    url: 'https://unsplash.com/photos/06WiXBqhs_A',
-    via: 'E. Unuabona',
-    license: 'License: Unsplash'
+    filename: "51907203691_9e888ccc2a_c.jpg",
+    url: 'https://www.flickr.com/photos/geolis06/51907203691/',
+    via: 'Georges Lissillour',
+    license: 'Public Domain'
   },
 ];
 
@@ -81,6 +82,8 @@ export const paletteOptions = objectOptions(palettes);
 /** Emoji */
 
 export const emojiOptions = [
+  { name: "flag_ukraine", label: "Ukraine Flag" },
+  { name: "face_mask", label: "Face mask" },
   { name: "faces", label: "Faces" },
   { name: "hearts", label: "Hearts" },
   { name: "halloween", label: "Halloween" },

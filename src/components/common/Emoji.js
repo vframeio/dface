@@ -3,6 +3,10 @@
  * @module components/common/Emoji.js
  */
 
+import FlagUkraine from "twemoji-emojis/vendor/svg/1f1fa-1f1e6.svg";
+
+import FaceMask from "twemoji-emojis/vendor/svg/1f637.svg";
+
 import Face1 from "twemoji-emojis/vendor/svg/2764.svg";
 import Face2 from "twemoji-emojis/vendor/svg/1f601.svg";
 import Face3 from "twemoji-emojis/vendor/svg/1f600.svg";
@@ -37,7 +41,6 @@ import Halloween4 from "twemoji-emojis/vendor/svg/1f47b.svg";
 import Halloween5 from "twemoji-emojis/vendor/svg/1f383.svg";
 import Halloween6 from "twemoji-emojis/vendor/svg/2620.svg"; // skull
 import Halloween7 from "twemoji-emojis/vendor/svg/1f921.svg"; // clown
-// import Poo from "twemoji-emojis/vendor/svg/1f4a9.svg";
 
 import Animals1 from "twemoji-emojis/vendor/svg/1f981.svg";
 import Animals3 from "twemoji-emojis/vendor/svg/1f99d.svg";
@@ -64,6 +67,12 @@ import Fruits6 from "twemoji-emojis/vendor/svg/1f347.svg";
 export default function Emoji() {
   return (
     <div className="emoji">
+      <div className="flag_ukraine">
+        <img src={FlagUkraine.src} />
+      </div>
+      <div className="face_mask">
+        <img src={FaceMask.src} />
+      </div>
       <div className="faces">
         <img src={Face1.src} />
         <img src={Face2.src} />

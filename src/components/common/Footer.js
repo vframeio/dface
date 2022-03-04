@@ -9,6 +9,7 @@ export default function Footer() {
   return (
     <ul className="footer">
       <li>
+        <Link href="/about">About</Link> -{" "}
         <Link href="/privacy">Privacy</Link> -{" "}
         <Link href="/disclaimer">Disclaimer</Link>
       </li>

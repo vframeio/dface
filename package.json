@@ -16,7 +16,7 @@
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
-    "@tensorflow/tfjs": "^3.9.0",
+    "@tensorflow/tfjs": "^3.14.0",
     "async-canvas-to-blob": "^1.0.3",
     "clsx": "^1.1.1",
     "core-js": "^3.18.3",

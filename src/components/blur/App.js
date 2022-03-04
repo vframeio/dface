@@ -35,8 +35,8 @@ export default function App() {
       confidence: 0.25,
     },
     process: {
-      effect: "color",
-      palette: "blue",
+      effect: "emoji", // "color"
+      palette: "flag_ukraine",
       shape: "rect",
       softenEdges: 0.1,
       expand: 0.1,
@@ -51,7 +51,7 @@ export default function App() {
       radius: 0.15,
     },
     emoji: {
-      type: "faces",
+      type: "flag_ukraine",
     },
     fuzz: {
       radius: 0.5,

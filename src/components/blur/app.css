@@ -59,7 +59,7 @@
   opacity: 1;
   width: 720px;
   max-width: 100%;
-  animation: fadeIn 0.1s;
+  /*animation: fadeIn 0.1s;*/
 }
 @keyframes fadeIn {
   0% {
@@ -74,15 +74,18 @@
 }
 
 .results .image {
-  background-size: cover;
+  /*background-size: cover;
   background-position: center center;
   background-color: #ddd;
-  width: 100%;
+  width: 100%;*/
+}
+.results .result img {
+  display: block;
 }
 .results.placeholder .image {
-  opacity: 0.5;
+  /*opacity: 0.5;
   filter: blur(1px);
-  overflow: hidden;
+  overflow: hidden;*/
 }
 .results .meta {
   width: 100%;

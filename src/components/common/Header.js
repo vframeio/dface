@@ -17,7 +17,7 @@ export default function Header() {
         AI powered face redaction
       </p>
       <p className="hello-links">
-        <Link href="/guide">Guide</Link> - <Link href="/faq">FAQ</Link> - <Link href="/about">About</Link>
+        <Link href="/guide">Guide</Link> - <a href="https://github.com/vframeio/dface">Code</a>
       </p>
 
     </div>

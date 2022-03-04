@@ -13,18 +13,17 @@ export default function ResultsPlaceholder({ images }) {
     <div className="results placeholder">
       {images.map((image, index) => (
         <div key={index} className="result">
-          <div
-            className="image"
+          <img 
+            src={image.url} alt="Detection result"
             style={{
-              backgroundColor: "#ddd",
-              backgroundImage: `url(${image.url})`,
-              width: "100%",
-              maxWidth: image.image?.naturalWidth,
-              aspectRatio: `${image.image?.naturalWidth} / ${image.image?.naturalHeight}`,
+              maxWidth: image.image.naturalWidth,
+              width: '100%',
+              minWidth: '360px',
+              aspectRatio: `${image.image.naturalWidth} / ${image.image.naturalHeight}`,
             }}
-          />
+           />
           <div className="meta">
-            <div className="info">Processing...</div>
+            <div className="info">Processing...Please wait.</div>
           </div>
         </div>
       ))}
