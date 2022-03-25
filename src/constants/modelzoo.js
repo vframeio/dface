@@ -12,8 +12,31 @@ export const modelzoo = {
     "nms_threshold": 0.4,
     "threshold": 0.5,
     "resize_enabled": true,
+    "object_type": "face",
     "labels": [
       "Face"
+    ],
+    "license": "GNU General Public License v3.0",
+    "version": 1,
+    "sample_images": [
+      {
+        "filename": "51906231762_6fce013c41_c.jpg",
+        "url": "https://www.flickr.com/photos/geolis06/51906231762/",
+        "via": "Georges Lissillour",
+        "license": "Public Domain"
+      },
+      {
+        "filename": "51907203661_a090071bc1_c.jpg",
+        "url": "https://www.flickr.com/photos/geolis06/51907203661/",
+        "via": "Georges Lissillour",
+        "license": "Public Domain"
+      },
+      {
+        "filename": "51907203691_9e888ccc2a_c.jpg",
+        "url": "https://www.flickr.com/photos/geolis06/51907203691/",
+        "via": "Georges Lissillour",
+        "license": "Public Domain"
+      }
     ]
   },
   "yoloface-18-sm": {
@@ -24,8 +47,31 @@ export const modelzoo = {
     "nms_threshold": 0.4,
     "threshold": 0.5,
     "resize_enabled": true,
+    "object_type": "face",
     "labels": [
       "Face"
+    ],
+    "license": "GNU General Public License v3.0",
+    "version": 1,
+    "sample_images": [
+      {
+        "filename": "51906231762_6fce013c41_c.jpg",
+        "url": "https://www.flickr.com/photos/geolis06/51906231762/",
+        "via": "Georges Lissillour",
+        "license": "Public Domain"
+      },
+      {
+        "filename": "51907203661_a090071bc1_c.jpg",
+        "url": "https://www.flickr.com/photos/geolis06/51907203661/",
+        "via": "Georges Lissillour",
+        "license": "Public Domain"
+      },
+      {
+        "filename": "51907203691_9e888ccc2a_c.jpg",
+        "url": "https://www.flickr.com/photos/geolis06/51907203691/",
+        "via": "Georges Lissillour",
+        "license": "Public Domain"
+      }
     ]
   }
 };

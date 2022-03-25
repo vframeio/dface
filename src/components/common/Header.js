@@ -14,7 +14,7 @@ export default function Header() {
         </Link>
       </h1>
       <p className="hello">
-        AI powered face redaction
+        Automatic, private, open-source face redaction by <a href="https://vframe.io">VFRAME.io</a>
       </p>
       <p className="hello-links">
         <Link href="/guide">Guide</Link> - <a href="https://github.com/vframeio/dface">Code</a>

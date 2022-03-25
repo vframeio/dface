@@ -34,13 +34,21 @@ export default function useAsyncTask({
 
   useEffect(() => {
     if (dependencies.some((dependency) => dependency?.loading)) {
-      setState({ ...state, progress: 0, results: null });
+      setState({
+        ...state,
+        progress: 0,
+        results: null,
+        startTime: null,
+        endTime: null,
+      });
       return;
     }
     if (!ready || state.loading) {
       setState({
         loading: false,
         results: null,
+        startTime: null,
+        endTime: null,
       });
       return;
     }

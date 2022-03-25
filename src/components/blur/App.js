@@ -72,6 +72,7 @@ export default function App() {
   const detections = useDetection(model, images);
   const processed = useProcess(model, detections, settings, resultsSettings);
   const [isWorking, setIsWorking] = useState(false);
+  const [isFirstTime, setFirstTime] = useState(true);
 
   useEffect(() => {
     setIsWorking(
@@ -83,6 +84,23 @@ export default function App() {
           !processed?.results)
     );
   }, [model, detections, processed]);
+
+  useEffect(() => {
+    if (detections?.results) {
+      setFirstTime(false);
+    }
+  }, [detections?.results]);
+
+  const handleReset = useCallback(() => {
+    setImages([]);
+    setResultsSettings({
+      ...resultsSettings,
+      process: {
+        ...resultsSettings.process,
+        showSamples: true,
+      },
+    });
+  }, [resultsSettings]);
 
   const handleDrop = useCallback(
     (newImages) => {
@@ -99,16 +117,11 @@ export default function App() {
   );
 
   const handleSample = useCallback(
-    (event) => {
-      setImages([
-        {
-          url: event.target.src,
-          image: event.target,
-          filename: getFilename(event.target.src),
-        },
-      ]);
+    (sampleImage) => {
+      handleReset();
+      setImages([sampleImage]);
     },
-    [settings]
+    [handleReset]
   );
 
   const handleSettingsChange = useCallback(
@@ -121,7 +134,12 @@ export default function App() {
         },
       };
       if (name === "model") {
-        newSettings.detect.confidence = modelzoo[value].threshold;
+        newSettings.detect = {
+          ...newSettings.detect,
+          confidence: modelzoo[value].threshold,
+        };
+        setImages([]);
+        setFirstTime(true);
       }
       setSettings(newSettings);
     },
@@ -141,17 +159,6 @@ export default function App() {
     },
     [resultsSettings]
   );
-
-  const handleReset = useCallback(() => {
-    setImages([]);
-    setResultsSettings({
-      ...resultsSettings,
-      process: {
-        ...resultsSettings.process,
-        showSamples: true,
-      },
-    });
-  }, [resultsSettings]);
 
   return (
     <>
@@ -188,7 +195,7 @@ export default function App() {
             />
           )}
           {!!images?.length && isWorking && (
-            <ResultsPlaceholder images={images} />
+            <ResultsPlaceholder images={images} isFirstTime={isFirstTime} />
           )}
           {!!images?.length && !isWorking && !!processed?.results?.length && (
             <Results
@@ -206,7 +213,11 @@ export default function App() {
             />
           )}
           {resultsSettings.process.showSamples && (
-            <SampleImages onClick={handleSample} isWorking={isWorking} />
+            <SampleImages
+              modelName={settings.detect.model}
+              onClick={handleSample}
+              isWorking={isWorking}
+            />
           )}
           <Emoji />
         </div>

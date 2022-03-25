@@ -29,30 +29,6 @@ export const shapeOptions = [
   { name: "ellipse", label: "Ellipse" },
 ];
 
-/** Sample images */
-
-export const sampleImages = [
-
-  { 
-    filename: "51906231762_6fce013c41_c.jpg",
-    url: 'https://www.flickr.com/photos/geolis06/51906231762/',
-    via: 'Georges Lissillour',
-    license: 'Public Domain'
-  },
-  { 
-    filename: "51907203661_a090071bc1_c.jpg",
-    url: 'https://www.flickr.com/photos/geolis06/51907203661/',
-    via: 'Georges Lissillour',
-    license: 'Public Domain'
-  },
-  { 
-    filename: "51907203691_9e888ccc2a_c.jpg",
-    url: 'https://www.flickr.com/photos/geolis06/51907203691/',
-    via: 'Georges Lissillour',
-    license: 'Public Domain'
-  },
-];
-
 /** Color palettes */
 
 export const palettes = {
@@ -90,3 +66,13 @@ export const emojiOptions = [
   { name: "fruits", label: "Fruits" },
   { name: "animals", label: "Animals" },
 ];
+
+/** Paths */
+
+export const IMAGE_BASE_HREF = "/assets/img/sample";
+export const THUMBNAIL_BASE_HREF = "/assets/img/sample/t";
+
+export const getWeightsPath = (modelName) =>
+  process.env.NODE_ENV == "production"
+    ? `https://ams3.digitaloceanspaces.com/vframe/dface_app/models/${modelName}/model.json`
+    : `assets/models/${modelName}/model.json`;

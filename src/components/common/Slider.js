@@ -3,7 +3,7 @@
  * @module components/common/Slider.js
  */
 
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import RcSlider from "rc-slider";
 import PropTypes from "prop-types";
 
@@ -22,6 +22,10 @@ export default function Slider({
   const handleChange = useCallback((newValue) => {
     setValue(newValue);
   }, []);
+
+  useEffect(() => {
+    setValue(value);
+  }, [value]);
 
   const handleConfirm = useCallback(
     (event) => {

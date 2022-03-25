@@ -17,9 +17,9 @@
   font-family: "Roboto Mono", monospace;
   font-size: 12px;
   color: #333;
-  margin-bottom: 8px;
   text-transform: uppercase;
   display: block;
+  margin-bottom: 0.375rem;
 }
 .labelTitle {
   font-family: "Roboto Mono", monospace;
