@@ -1,22 +1,38 @@
+# -------------------------------------------------------------------
+#
+# DFace Face Detection by VFRAME
+# https://dface.app
+#
+# -------------------------------------------------------------------
+
 anchors:
 
-    yoloface-base: &yoloface-base
-        name: YoloFace
-        width: 1280
-        height: 1280
-        iou: 0.45
-        nms_threshold: 0.4
-        threshold: 0.5
-        resize_enabled: True
-        labels: ["Face"]
-
+  yoloface-base: &yoloface-base
+    name: YoloFace
+    width: 1280
+    height: 1280
+    iou: 0.45
+    nms_threshold: 0.4
+    threshold: 0.5
+    resize_enabled: True
+    object_type: face
+    labels: ["Face"]
+    license: GNU General Public License v3.0
+    version: 1.0
+    sample_images:
+      - filename: "chuttersnap-8I423fRMwjM-unsplash.jpg"
+        via: Chutternsap
+        url: https://unsplash.com
+      - filename: "ehimetalor-akhere-unuabona-06WiXBqhs_A-unsplash.jpg"
+        via: Ehimetalor Unuabona
+        url: https://unsplash.com
 
 models:
 
-    yoloface-18-nn:
-        <<: *yoloface-base
-        name: Nano 1.18 (12MB)
+  yoloface-18-nn:
+    <<: *yoloface-base
+    name: Nano 1.18 (12MB)
 
-    yoloface-18-sm:
-        <<: *yoloface-base
-        name: Small 1.18 (50MB)
+  yoloface-18-sm:
+    <<: *yoloface-base
+    name: Small 1.18 (50MB)
