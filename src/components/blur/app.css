@@ -20,7 +20,8 @@
   text-transform: uppercase;
 }
 .introTextB {
-  color: #333;
+  color: #b0b0b0;
+  font-size: 1.5rem;
 }
 
 .emoji {
@@ -186,11 +187,15 @@
   justify-content: center;
   background: #f8f8f8;
   margin-bottom: 1.25rem;
-  border: 1px dashed #01e;
+  border: 2px dashed #01e;
   color: #0011ee;
+}
+.mobile .dropzone {
+  min-height: 5rem;
 }
 .dropzone:hover {
   background: #fefefe;
+  border: 2px solid #01e;
   cursor: pointer;
 }
 .dropzone.condensed {
@@ -198,7 +203,7 @@
   padding: 1.25rem 0;
   color: #01e;
   font-size: 18px;
-  border: 1px dashed #01e;
+  border:1px dashed #01e;
   text-transform: uppercase;
 }
 .dropzone.processing {
