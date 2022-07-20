@@ -10,7 +10,7 @@ export default function Header() {
     <div className="header">
       <h1>
         <Link href="/" passHref>
-          <img src="/assets/img/dface_logo.svg" width="100px"/>
+          <img src="/assets/img/dface_logo.svg" width="150px"/>
         </Link>
       </h1>
       <p className="hello">

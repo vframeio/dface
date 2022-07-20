@@ -20,22 +20,14 @@ export const modelzoo = {
     "version": 1,
     "sample_images": [
       {
-        "filename": "51906231762_6fce013c41_c.jpg",
-        "url": "https://www.flickr.com/photos/geolis06/51906231762/",
-        "via": "Georges Lissillour",
-        "license": "Public Domain"
+        "filename": "chuttersnap-8I423fRMwjM-unsplash.jpg",
+        "via": "Chutternsap",
+        "url": "https://unsplash.com"
       },
       {
-        "filename": "51907203661_a090071bc1_c.jpg",
-        "url": "https://www.flickr.com/photos/geolis06/51907203661/",
-        "via": "Georges Lissillour",
-        "license": "Public Domain"
-      },
-      {
-        "filename": "51907203691_9e888ccc2a_c.jpg",
-        "url": "https://www.flickr.com/photos/geolis06/51907203691/",
-        "via": "Georges Lissillour",
-        "license": "Public Domain"
+        "filename": "ehimetalor-akhere-unuabona-06WiXBqhs_A-unsplash.jpg",
+        "via": "Ehimetalor Unuabona",
+        "url": "https://unsplash.com"
       }
     ]
   },
@@ -55,22 +47,14 @@ export const modelzoo = {
     "version": 1,
     "sample_images": [
       {
-        "filename": "51906231762_6fce013c41_c.jpg",
-        "url": "https://www.flickr.com/photos/geolis06/51906231762/",
-        "via": "Georges Lissillour",
-        "license": "Public Domain"
+        "filename": "chuttersnap-8I423fRMwjM-unsplash.jpg",
+        "via": "Chutternsap",
+        "url": "https://unsplash.com"
       },
       {
-        "filename": "51907203661_a090071bc1_c.jpg",
-        "url": "https://www.flickr.com/photos/geolis06/51907203661/",
-        "via": "Georges Lissillour",
-        "license": "Public Domain"
-      },
-      {
-        "filename": "51907203691_9e888ccc2a_c.jpg",
-        "url": "https://www.flickr.com/photos/geolis06/51907203691/",
-        "via": "Georges Lissillour",
-        "license": "Public Domain"
+        "filename": "ehimetalor-akhere-unuabona-06WiXBqhs_A-unsplash.jpg",
+        "via": "Ehimetalor Unuabona",
+        "url": "https://unsplash.com"
       }
     ]
   }

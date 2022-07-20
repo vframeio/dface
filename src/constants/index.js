@@ -55,6 +55,10 @@ export const palettes = {
 
 export const paletteOptions = objectOptions(palettes);
 
+/** Colors */
+
+export const YOLO_FILL_COLOR = "rgb(114, 114, 114)";
+
 /** Emoji */
 
 export const emojiOptions = [
@@ -76,3 +80,4 @@ export const getWeightsPath = (modelName) =>
   process.env.NODE_ENV == "production"
     ? `https://ams3.digitaloceanspaces.com/vframe/dface_app/models/${modelName}/model.json`
     : `assets/models/${modelName}/model.json`;
+
